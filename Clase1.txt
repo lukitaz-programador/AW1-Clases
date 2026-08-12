@@ -1,0 +1,4 @@
+Vamos a tener 3 repositorios para poder llevar la materia, uno para la actividades de clase,
+otro de clase para llevar el desarrollo del día y uno de TP para las entregas de los TPs grupales.
+
+Los TPs son obligatorios, con entregas escalables de html, css y js.

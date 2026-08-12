@@ -1,0 +1,35 @@
+Para el desarrollo de las entregas de TP vamos a hacer una aplicación web que se va a ir desarrollando con un catálogo principal.
+
+Hay que tener una arquitectura de sistema que puede ser dinámica, por ejemplo, que la aplicación vaya adaptando su información dependiendo del día o etapa del año, orientado al contexto. Esto permite que el contenido, las funcionalidades o las recomendaciones cambien según las necesidades del usuario y el momento.
+
+Sitemap: diagrama jerárquico que representa la estructura organizativa de las páginas y contenidos del sitio web. Permite visualizar cómo se relacionan las diferentes secciones y facilita la planificación de la navegación.
+
+Enfoque MPA vs SPA:
+
+MPA (Multi-Page Application): recarga una nueva página HTML completa desde el servidor al navegar entre diferentes secciones.
+SPA (Single-Page Application): carga una página inicial y actualiza dinámicamente su contenido mediante JavaScript, evitando recargar el sitio completo.
+
+SSR vs CSR:
+
+SSR (Server-Side Rendering): el servidor genera el HTML de la página y lo envía al navegador ya renderizado. Puede mejorar el SEO y el tiempo de carga inicial.
+CSR (Client-Side Rendering): el navegador recibe una estructura inicial y JavaScript se encarga de generar y actualizar gran parte del contenido. Permite interfaces más dinámicas e interactivas.
+
+Cliente ↔ Servidor: el cliente realiza solicitudes al servidor y el servidor procesa esas solicitudes y devuelve información o recursos. Esta comunicación permite que el usuario interactúe con los datos y funcionalidades de la aplicación.
+
+El usuario es quien utiliza la aplicación, mientras que el cliente es el software que utiliza para acceder a ella, normalmente un navegador web como Chrome, Edge o Firefox.
+
+HTTP: protocolo utilizado para la comunicación y transferencia de información entre el cliente y el servidor. Permite realizar solicitudes y recibir respuestas, como páginas HTML, imágenes, archivos o datos.
+
+HTTPS: versión segura de HTTP que utiliza cifrado mediante TLS para proteger la información transmitida entre el cliente y el servidor. Ayuda a evitar que terceros puedan interceptar o modificar los datos durante la comunicación.
+
+SEO (Search Engine Optimization): conjunto de técnicas utilizadas para mejorar la visibilidad y el posicionamiento de un sitio web en los motores de búsqueda, como Google. Incluye aspectos como contenido, estructura HTML, velocidad de carga, accesibilidad y uso adecuado de palabras clave.
+
+GEO (Generative Engine Optimization): conjunto de prácticas orientadas a mejorar la posibilidad de que el contenido de un sitio sea comprendido, utilizado y mencionado por motores de búsqueda y sistemas de inteligencia artificial generativa. Busca proporcionar información clara, estructurada, relevante y confiable para facilitar su interpretación por estos sistemas.
+
+Boceto, wireframe y mockup:
+
+Boceto: representación inicial y rápida de una idea, generalmente realizada de forma simple para definir la distribución general de los elementos.
+Wireframe: esquema estructural de una página que muestra la ubicación y jerarquía de sus elementos, sin centrarse en colores, imágenes o detalles visuales.
+Mockup: representación visual más completa y cercana al diseño final, incluyendo colores, tipografías, imágenes, botones y otros elementos de la interfaz.
+
+Vamos a hacer una página web para el trabajo de TP hay que leer las consignas de los requisitos. 
