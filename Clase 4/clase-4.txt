@@ -1,0 +1,1 @@
+Hicimos el primer acercamiento a HTML donde aprendimos a realizar el index.html
