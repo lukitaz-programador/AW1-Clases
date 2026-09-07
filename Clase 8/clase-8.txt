@@ -1,0 +1,2 @@
+Hoy empezamos hablando de las tecnologías que vamos a ver para el desarrollo web.
+Vamos a ver el programa Node.js entorno de ejecucion de JavaScript. 
