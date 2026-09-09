@@ -9,6 +9,13 @@ node -v
 -Verificar npm:
 npm -v
 
+-Instalar manejador de paquetes pnpm
+https://pnpm.io/es/
+https://www.npmjs.com/
+
+-Hacer el cd a la ruta del repositorio y del proyecto
+cd (copy path)
+
 -Instalar manejador de paquetes pnpm:
 (i (instalar) -g (global))
 npm i -g pnpm 
@@ -33,3 +40,6 @@ Modificamos el package.json para que en vez de test este dev y poder abrir el fi
 -Abrir un puerto:
 pn dev 
 
+/*
+vamos a trabajar con una carpeta que se llama source y desde ahi intenta levantar el index.html
+*/
