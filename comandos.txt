@@ -25,6 +25,9 @@ pnpm -v
 
 Por proyecto:
 
+-Configurar scripts:
+Modificamos el package.json para que en vez de test este dev y poder abrir el five-server 
+
 -Verificar si no existe el package.json si no existe ejecutamos:
 pn init 
 
@@ -33,9 +36,6 @@ pn add five-server
 
 -Reinstalar paquetes si existe package.json:
 pn install 
-
--Configurar scripts:
-Modificamos el package.json para que en vez de test este dev y poder abrir el five-server 
 
 -Abrir un puerto:
 pn dev 

@@ -1,0 +1,82 @@
+/*
+Sintaxis
+*/
+
+/*
+Regla de estilo (Rule)
+
+selector{
+    propiedad1: valor;
+    propiedad2: valor;
+}
+*/
+
+@font-face {
+    font-family: Poppins;
+    src: url(./fuentes/Poppins-Regular.ttf);
+}
+
+/* Selectores de TIPO > CLASE*/
+
+/* SELECTOR UNIVERSAL */
+
+/*
+*{
+    outline: 1px red solid; 
+}
+*/
+
+
+html {
+    font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #ffbb62;
+    margin: 0;
+}
+
+a {
+    color: #100068;
+    text-decoration: none;
+}
+
+
+/*
+Va a seleccionar todas las anclas que encuentre asi que para poder modificar uno solo 
+Tenemos que usar el selector de CLASE
+*/
+
+
+.vinculos {
+    color: #100068;
+}
+
+nav a {
+    color: #100068;
+}
+
+
+/* ENCABEZADO PRINCIPAL */
+
+.encabezado-principal {
+    background-color: #a9c9e9;
+}
+
+nav a {
+    color: #100068;
+}
+
+/* CONTENIDO PRINCIPAL */
+
+.contenido-principal {
+    color: #100068;
+}
+
+/* PIE PRINCIPAL */
+
+.pie-principal {
+    color: #100068;
+    background-color: #a9c9e9;
+    margin-bottom: 0;
+}
