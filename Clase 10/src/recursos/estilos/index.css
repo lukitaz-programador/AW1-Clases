@@ -1,0 +1,64 @@
+/*JERARQUÍA
+universal
+tipo: toma un elemento del hmtl
+clase o atributo: plantillas
+id
+*/
+
+/*genéricos*/
+*{
+    box-sizing: border-box;
+}
+
+/*reset*/
+html,
+body,
+h1,
+h2,
+h3,
+ul{
+    padding:0;
+    margin:0
+}
+
+body {
+    background-color: #eeeeee;
+}
+
+a {
+    color: #941212;
+    text-decoration: none;
+}
+
+/*plantillas*/
+/* --- --- */
+.encabezado-principal {
+    padding: 5px 10px 20px 10px;
+    background-color:#3b0000;
+    border-bottom: 2px solid #3b0000;
+}
+
+.encabezado-principal nav{
+    width: 100%;
+    height: 120px;
+    padding: 5px;
+    border: 1px solid;
+    background-color: #bbbbbb;
+}
+
+/* --- --- */
+.contenido-principal {
+    padding: 10px;
+}
+
+.contenido-principal form input{
+    display: block;
+    width: 100%;
+}
+
+/* --- --- */
+.pie-principal {
+    padding: 20px 10px 5px 10px;
+    background-color: #bbbbbb;
+    border-top: 2px solid #3b0000;
+}

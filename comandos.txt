@@ -25,11 +25,11 @@ pnpm -v
 
 Por proyecto:
 
--Configurar scripts:
-Modificamos el package.json para que en vez de test este dev y poder abrir el five-server 
-
 -Verificar si no existe el package.json si no existe ejecutamos:
 pn init 
+
+-Configurar scripts:
+Modificamos el package.json para que en vez de test este dev y poder abrir el five-server 
 
 -Instalar el paquete five-server
 pn add five-server
@@ -39,6 +39,11 @@ pn install
 
 -Abrir un puerto:
 pn dev 
+
+-Creamos .fiveserverrc y src/ (acá van todas las carpetas y archivos)
+{
+    "root": "src"
+}
 
 /*
 vamos a trabajar con una carpeta que se llama source y desde ahi intenta levantar el index.html
