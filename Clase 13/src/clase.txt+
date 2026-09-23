@@ -1,0 +1,8 @@
+POSICIONAMIENTO
+
+flow flujo
+position static
+         sticky 
+         absolute saca elelemento de flujo
+         realtive
+         fixed

@@ -26,7 +26,7 @@ pnpm -v
 Por proyecto:
 
 -Verificar si no existe el package.json si no existe ejecutamos:
-pn init 
+npm i -g pnpm  
 
 -Configurar scripts:
 Modificamos el package.json para que en vez de test este dev y poder abrir el five-server 
