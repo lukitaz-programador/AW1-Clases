@@ -5,20 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Huellitas - contacto</title>
-    <link rel="stylesheet" href="recursos/estilos/index.css">
+    <link rel="stylesheet" href="./recursos/estilos/index.css">
 </head>
 
 <body>
     <header class="encabezado-principal">
         <a href="./index.html" aria-label="Ir al inicio">
-            <img src="./recursos/imagenes/huella.png" alt="Logo huellitas">
+            <img src="./recursos/imagenes/huella.png" alt="logo tienda mascotas huellitas">
         </a>
-        <nav>
+        <button class="boton-menu">Menu</button>
+        <nav class="vinculos">
             <a href="./index.html">
                 Inicio
             </a>
             <a href="./catalogo.html">
-                Catálogo
+                Catalogo
             </a>
             <a href="./contacto.html">
                 Contacto
@@ -31,34 +32,33 @@
         <div class="contenedor-form">
             <form action="./contacto.html" method="post">
                 <!-- 
-                    nombre
-                    telefono
-                    tamaño 
-                    edad 
-                    comentario / sobre la mascota
-                    -->
+            nombre
+            telefono
+            tamaño
+            edad
+            comportamiento de mascota
+             -->
                 <label for="id-nombre">Nombre</label>
                 <input type="text" name="nombre" id="id-nombre">
 
-                <label for="id-telefono">Teléfono</label>
-                <input type="tel" name="telefono" id="id-telefono">
+                <label for="id-tel">Teléfono</label>
+                <input type="tel" name="telefono" id="id-tel">
 
-                <label for="id-tamaño-mascota">Tamaño de la mascota</label>
-                <select name="tamaño-mascota" id="id-tamaño-mascota">
+                <label for="id-tamaño">Tamaño mascota</label>
+                <select name="tamaño-mascota" id="id-tamaño">
                     <option value="C">Chico</option>
                     <option value="M">Mediano</option>
                     <option value="G">Grande</option>
                 </select>
 
                 <label for="id-edad">Edad</label>
-                <input type="number" name="edad" id="id-edad">
+                <input type="number" name="edad" id="id-edad" min="0" max="20">
 
-                <label for="id-comentario">Comentario sobre la mascota</label>
-                <textarea name="comentario" id="id-comentario"></textarea>
+                <label for="id-comentario">Comentario sobre mascota</label>
+                <textarea name="comentarios" id="id-comentario"></textarea>
 
-                <!-- --  -->
-                <!-- <input type="submit" value="Enviar"> -->
                 <div>
+                    <!-- Botón -->
                     <button type="reset">
                         Limpiar
                     </button>
@@ -68,21 +68,29 @@
                 </div>
             </form>
         </div>
-        <h2>Dónde estamos</h2>
+
+        <h2>Donde Estamos</h2>
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.7899732760334!2d-64.1914771237341!3d-31.41991219642294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a286a09424ab%3A0x637dd38a25e5eb11!2sBlvd.%20San%20Juan%20200%2C%20X5022%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1788354720680!5m2!1ses-419!2sar"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.7899732760334!2d-64.1914771237341!3d-31.41991219642294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a286a09424ab%3A0x637dd38a25e5eb11!2sBlvd.%20San%20Juan%20200%2C%20X5022%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1788354737668!5m2!1ses!2sar"
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+
     </main>
     <footer class="pie-principal">
         <ul>
             <li>
-                <a href="https://instagram.com/@huellitas" target="_blank">
-                    @huellitas
+                <a href="https:/instagram.com/@huellitas_ok" target="_blank">
+                    @huellitas_ok
                 </a>
             </li>
             <li>
-                Bv. San Juan 200 - Bº Nueva Córdoba
+                Bv. San Juan 200 - Bº Zona Centro
+            </li>
+            <li class="mensajeria">
+                <a href="https://wa.me?tel=111111" aria-label="enlace al whatsapp" target="_nueva">
+                    <img src="./recursos/imagenes/favicon.svg" alt="icono mensajería">
+                </a>
             </li>
         </ul>
     </footer>
