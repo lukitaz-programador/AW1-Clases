@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+}
+
+/* Importar fuente */
+@font-face {
+    font-family: Poppins;
+    src: url(./fuentes/Poppins-Regular.ttf);
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Selectores de TIPO (es el nombre de la etiqueta del elemento) */
+html{
+    font-family: Poppins, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px; /* Valor que afecta a todos los textos, y se toma como referencia */
+}
+
+body{
+    background-color: #82acce;
+}
+
+h1{
+    color: #233496;
+}
+
+h2{
+    color: #0f6b8a;
+}
+
+h3{
+    color: #8a3b12;
+}
+
+
+a{
+    color: #333333;
+    text-decoration: none;
+}
+
+button{
+    background-color: #ffffed;
+    color: #233496;
+    font-weight: bold;
+    font-size: small;
+    border-radius: 10px;
+    border: 3px solid #233496;
+    cursor: pointer;
+}
+
+img{
+    border: none;
+}
+
+/* Contenido encabezado */
+.encabezado-principal{
+    position: sticky;
+    top: 0px;
+    z-index: 1; /* Permite trabajar en el eje Z de profundidad */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fffaeb;
+    font-size: larger;
+    padding: 10px;
+}
+
+.encabezado-principal a img{
+    width: 100px;
+    border: none;
+}
+
+.encabezado-principal nav a,
+.encabezado-principal .vinculos a{
+    color: #233496;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Contenido principal */
+.contenido-principal{
+    background-color: #cbebf5;
+    /* position: relative; */
+}
+
+.contenido-principal .parrafo{
+    /* position: absolute; saca el elemento del flujo y lo pega a un elemento con position relative
+    top: 100px;
+    right: 100px; */
+    font-size: 0.9rem; /* rem relativo a la raíz, multiplica por el tamaño indicado en html */
+    background-color: #4a93b4;
+    /* width: 200px; */
+}
+
+.contenido-principal img{
+    max-width: 100%;
+}
+
+.contenido-principal .contenedor-form{
+    padding: 5px 20px 5px 20px;
+}
+
+.contenido-principal .contenedor-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-principal .contenedor-form form select{
+    max-width: 300px;
+}
+
+.contenido-principal .contenedor-form form input{
+    margin-bottom: 10px;
+    max-width: 300px;
+}
+
+.contenido-principal .contenedor-form form button{
+    margin: 10px 10px 0px 0px;
+}
+
+/* Contenido pie */
+.pie-principal{
+    background-color: #ffffed;
+}
+
+.pie-principal ul li,
+.pie-principal ul li a{
+    text-decoration: none;
+    color: #333333;
+}
+
+.pie-principal .mensajeria{
+    list-style: none;
+    position: fixed; /* fixed toma como referencia al viewport */
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.pie-principal .mensajeria img{
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+
+/* Responsividad
+@media(width > 640px) and (width < 1200px){
+    body{
+        background-color: #cbebf5;
+    }
+
+    .contenido-principal{
+        background-color: #cbebf5;
+    }
+
+    .encabezado-principal nav{
+        display: block;
+    }
+
+    .encabezado-principal .boton-menu{
+        display: none;
+    }
+} */
