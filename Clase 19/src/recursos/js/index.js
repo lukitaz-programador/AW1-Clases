@@ -36,7 +36,10 @@ obtenerDatos(URL_PRODUCTOS).then((datos) => {
 
 })
 
-const productosCarrito = [] //--> push()
+//ACTIVIDAD 13
+const productosCarrito = JSON.parse(localStorage.getItem('carritoCantidad')) || [];
+carro.textContent = productosCarrito.length; // Reflejamos el valor inicial en el header
+
 // Escuchador
 eventoBoton.addEventListener('click', (evento) => {
     // console.log(evento)
@@ -70,5 +73,8 @@ botonesCarro.forEach((boton) => {
         productosCarrito.push(idProducto)
         console.log(productosCarrito)
         carro.textContent = productosCarrito.length
+
+        //CAMBIO ACTIVIDAD 13
+        localStorage.setItem('carritoCantidad', JSON.stringify(productosCarrito));
     })
-})
+})  
