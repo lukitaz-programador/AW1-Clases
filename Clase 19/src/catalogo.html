@@ -4,133 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huellitas - catálogo</title>
-    <link rel="stylesheet" href="./recursos/estilos/index.css">
-    <!-- 1 - Atributo defer
-        2 - Atributo y valor type = "module" -->
-    <script type="module" src="./recursos/js/index.js"></script>
+    <title>Huellitas - catalogo</title>
+    <link rel="stylesheet" href="recursos/estilos/index.css">
+    <!-- 
+    Diferimos la ejeución
+    1 - Atributo defer
+    2 - atributo y valor type="module" 
+    -->
+    <script type="module" src="recursos/js/index.js"></script>
 </head>
 
 <body>
     <header class="encabezado-principal">
         <a href="./index.html" aria-label="Ir al inicio">
-            <img src="./recursos/imagenes/huella.png" alt="logo tienda mascotas huellitas">
+            <img src="./recursos/imagenes/huella.png" alt="Logo huellitas">
         </a>
-        <button class="boton-menu">Menu</button>
-        <nav class="vinculos">
+        <nav>
             <a href="./index.html">
                 Inicio
             </a>
             <a href="./catalogo.html">
-                Catalogo
+                Catálogo
             </a>
             <a href="./contacto.html">
                 Contacto
             </a>
-
         </nav>
     </header>
     <main class="contenido-principal">
-        <h1>Catalogo</h1>
+        <h1>Catálogo</h1>
         <section>
             <h2>Productos</h2>
+            <button id="evento-boton">Evento</button>
+            <dialog id="dialogo">
+                <h2>Producto</h2>
+                <p>Descripcion</p>
+                <form method="dialog">
+                    <button>Cerrar</button>
+                </form>
+            </dialog>
             <div id="contenedor-productos">
                 <!-- <article>
                     <h3>Correa</h3>
                     <picture>
-                        <img src="./recursos/imagenes/productos/perro_correa.jpg" alt="perro mediano con correa">
+                        <img src="recursos/imagenes/productos/correa-perro.jpg" alt="Perro mediano con correa">
                         <source media="(min-width: )" srcset="" sizes="">
                     </picture>
                     <p>
-                        Correa mediana de color azul
+                        Coorea grande
                     </p>
                     <ul>
                         <li>
-                            Talle M
+                            Talles S M L
                         </li>
                         <li>
-                            Precio $8000
+                            Precio $ 5000
                         </li>
                     </ul>
-                    <button>Agregar al Carrito</button>
-                </article>
-                <article>
-                    <h3>Correa</h3>
-                    <picture>
-                        <img src="./recursos/imagenes/productos/perro_correa.jpg" alt="perro mediano con correa">
-                        <source media="(min-width: )" srcset="" sizes="">
-                    </picture>
-                    <p>
-                        Correa mediana de color azul
-                    </p>
-                    <ul>
-                        <li>
-                            Talle M
-                        </li>
-                        <li>
-                            Precio $8000
-                        </li>
-                    </ul>
-                    <button>Agregar al Carrito</button>
-                </article>
-                <article>
-                    <h3>Correa</h3>
-                    <picture>
-                        <img src="./recursos/imagenes/productos/perro_correa.jpg" alt="perro mediano con correa">
-                        <source media="(min-width: )" srcset="" sizes="">
-                    </picture>
-                    <p>
-                        Correa mediana de color azul
-                    </p>
-                    <ul>
-                        <li>
-                            Talle M
-                        </li>
-                        <li>
-                            Precio $8000
-                        </li>
-                    </ul>
-                    <button>Agregar al Carrito</button>
-                </article>
-                <article>
-                    <h3>Correa</h3>
-                    <picture>
-                        <img src="./recursos/imagenes/productos/perro_correa.jpg" alt="perro mediano con correa">
-                        <source media="(min-width: )" srcset="" sizes="">
-                    </picture>
-                    <p>
-                        Correa mediana de color azul
-                    </p>
-                    <ul>
-                        <li>
-                            Talle M
-                        </li>
-                        <li>
-                            Precio $8000
-                        </li>
-                    </ul>
-                    <button>Agregar al Carrito</button>
-                </article>
+                    <button>Agregar al carro</button>
+                </article>                 -->
             </div>
-        </section> -->
+        </section>
     </main>
     <footer class="pie-principal">
         <ul>
             <li>
-                <a href="https:/instagram.com/@huellitas_ok" target="_blank">
-                    @huellitas_ok
+                <a href="https://instagram.com/@huellitas" target="_blank">
+                    @huellitas
                 </a>
             </li>
             <li>
-                Bv. San Juan 200 - Bº Zona Centro
-            </li>
-            <li class="mensajeria">
-                <a href="https://wa.me?tel=111111" aria-label="enlace al whatsapp" target="_nueva">
-                    <img src="./recursos/imagenes/favicon.svg" alt="icono mensajería">
-                </a>
+                Bv. San Juan 200 - Bº Nueva Córdoba
             </li>
         </ul>
     </footer>
+    <button class="acceso-carrito" id="abrir-carrito" type="button" aria-label="Abrir carrito" title="Abrir carrito">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 4h2l2.2 10.1a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 1.9-1.4L22 8H6"></path>
+            <circle cx="10" cy="20" r="1"></circle>
+            <circle cx="18" cy="20" r="1"></circle>
+        </svg>
+        <span class="contador-carrito" id="carro" aria-live="polite">0</span>
+    </button>
+    <dialog class="dialogo-carrito" id="dialogo-carrito" aria-labelledby="titulo-carrito">
+        <div class="cabecera-carrito">
+            <h2 id="titulo-carrito">Mi carrito</h2>
+            <form method="dialog">
+                <button class="cerrar-carrito" type="submit" aria-label="Cerrar carrito">&times;</button>
+            </form>
+        </div>
+        <div id="productos-carrito"></div>
+        <p class="total-carrito" id="total-carrito"></p>
+    </dialog>
 </body>
 
 </html>

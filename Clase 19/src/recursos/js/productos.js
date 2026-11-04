@@ -7,5 +7,4 @@ async function obtenerDatos(url){
     return datos
 }
 
-
 export {obtenerDatos}

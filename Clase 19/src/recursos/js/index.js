@@ -6,75 +6,85 @@ import { renderizarCatalogo, filtrarPorTalle } from './funciones.js'
 
 // obtener los datos de productos almacenados en un JSON
 
-//Trabajo con persistencia de datos ---> local storage 
-const arreglo = [1, 2, 3, 4]
-const valorAguardar = JSON.stringify(arreglo)
-//valorAguardar = "[1,2,3,4]"
-
-localStorage.setItem('materia', valorAguardar)
-
-const valor = localStorage.getItem('materia')
-
-const valorConvertidoNuevamenteAArreglo = JSON.parse(valor)
-
-console.log(typeof valorConvertidoNuevamenteAArreglo)
-
-
 // Referenciamos un elemento del DOM
 const contenedorProductos = document.getElementById("contenedor-productos")
 const eventoBoton = document.getElementById('evento-boton')
 const dialogo = document.getElementById('dialogo')
 const carro = document.getElementById('carro')
+const botonAbrirCarrito = document.getElementById('abrir-carrito')
+const dialogoCarrito = document.getElementById('dialogo-carrito')
+const contenedorCarrito = document.getElementById('productos-carrito')
+const totalCarrito = document.getElementById('total-carrito')
 
-// Arreglo productos
-const productosMascotas = await obtenerDatos(URL_PRODUCTOS)
+if (contenedorProductos) {
+    const productosMascotas = await obtenerDatos(URL_PRODUCTOS)
+    const productosCarrito = JSON.parse(localStorage.getItem('carritoCantidad')) || []
 
-// Tarea ver lo siguiente
+    carro.textContent = productosCarrito.length
 
-obtenerDatos(URL_PRODUCTOS).then((datos) => {
-    // planificar cuando se ejecuta este código
+    if (eventoBoton && dialogo) {
+        eventoBoton.addEventListener('click', () => dialogo.showModal())
+    }
 
-})
+    const productosFiltrados = filtrarPorTalle(productosMascotas, 'S')
+    renderizarCatalogo(contenedorProductos, productosFiltrados)
 
-//ACTIVIDAD 13
-const productosCarrito = JSON.parse(localStorage.getItem('carritoCantidad')) || [];
-carro.textContent = productosCarrito.length; // Reflejamos el valor inicial en el header
-
-// Escuchador
-eventoBoton.addEventListener('click', (evento) => {
-    // console.log(evento)
-    //dialogo.show()
-    dialogo.showModal()
-})
-
-// Select 
-/*
-<select name="talle">
-<option value="S">S</option>
-</select>
-*/
-// Filtramos el arreglo de los productos
-const productosFiltrados = filtrarPorTalle(productosMascotas, 'S')
-
-// 1) Renderizamos
-renderizarCatalogo(contenedorProductos, productosFiltrados)
-
-// 2) Aplicamos los escuchadores
-const botonesCarro = contenedorProductos.querySelectorAll('.boton-agregar-carro')
-// const botonesCarro = contenedorProductos.querySelectorAll('[data-id]') // <-- selector de atributo
-
-botonesCarro.forEach((boton) => {
-    // Cuerpo forEach
-    boton.addEventListener('click', (evento) => {
-        // Cuerpo del callback listener
-        // const idProducto = Number(boton.dataset.id)
-        const idProducto = parseInt(boton.dataset.id)
-        console.log(idProducto)
-        productosCarrito.push(idProducto)
-        console.log(productosCarrito)
+    const guardarCarrito = () => {
+        localStorage.setItem('carritoCantidad', JSON.stringify(productosCarrito))
         carro.textContent = productosCarrito.length
+        renderizarCarrito()
+    }
 
-        //CAMBIO ACTIVIDAD 13
-        localStorage.setItem('carritoCantidad', JSON.stringify(productosCarrito));
+        const renderizarCarrito = () => {
+            const cantidades = productosCarrito.reduce((acumulado, id) => {
+                acumulado[id] = (acumulado[id] || 0) + 1
+                return acumulado
+            }, {})
+            const productosEnCarrito = productosMascotas.filter((producto) => cantidades[producto.id])
+
+            if (productosEnCarrito.length === 0) {
+                contenedorCarrito.innerHTML = '<p class="carrito-vacio">Tu carrito está vacío.</p>'
+                totalCarrito.textContent = ''
+            return
+        }
+
+        contenedorCarrito.innerHTML = productosEnCarrito.map((producto) => `
+            <article class="item-carrito">
+                <div>
+                    <h3>${producto.nombre}</h3>
+                    <p>${cantidades[producto.id]} × $${Number(producto.precio).toFixed(2)}</p>
+                </div>
+                <button class="quitar-producto" type="button" data-id="${producto.id}">Quitar uno</button>
+            </article>
+        `).join('')
+
+        const total = productosEnCarrito.reduce((suma, producto) => {
+            return suma + Number(producto.precio) * cantidades[producto.id]
+        }, 0)
+        totalCarrito.textContent = `Total: $${total.toFixed(2)}`
+    }
+
+    contenedorProductos.addEventListener('click', (evento) => {
+        const boton = evento.target.closest('.boton-agregar-carro')
+        if (!boton) return
+
+        productosCarrito.push(Number(boton.dataset.id))
+        guardarCarrito()
     })
-})  
+
+    botonAbrirCarrito.addEventListener('click', () => {
+        renderizarCarrito()
+        dialogoCarrito.showModal()
+    })
+
+    contenedorCarrito.addEventListener('click', (evento) => {
+        const boton = evento.target.closest('.quitar-producto')
+        if (!boton) return
+
+        const indice = productosCarrito.indexOf(Number(boton.dataset.id))
+        if (indice !== -1) productosCarrito.splice(indice, 1)
+        guardarCarrito()
+    })
+
+    renderizarCarrito()
+}
